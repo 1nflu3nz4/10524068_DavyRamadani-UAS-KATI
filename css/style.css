@@ -1,0 +1,502 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5F5DC;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+h1, h2, h3, h4 {
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 15px;
+    vertical-align: top;
+}
+
+.header {
+    background: linear-gradient(90deg, #5D4037 70%, #8D6E63 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px; /* lebih tinggi agar ornamen tidak menempel teks */
+    padding-bottom: 40px;
+}
+
+.header-ornament {
+    position: absolute;
+    top: 0; left: 0; width: 100%; z-index: 0;
+    pointer-events: none;
+}
+
+.header h1, .header .tagline {
+    position: relative;
+    z-index: 1;
+}
+
+.header .tagline {
+    font-size: 1.1em;
+    color: #fffbe9;
+    margin-top: 8px;
+    letter-spacing: 1px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.menu {
+    background-color: #FFF8DC;
+    text-align: center;
+    padding: 10px;
+}
+
+.menu button {
+    background-color: #5D4037;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.menu button:hover {
+    background-color: #8D6E63;
+}
+
+.marquee {
+    background-color: #FFF8DC;
+    color: #8B4513;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
+}
+
+.kategori ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.promo img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    background-color: #5D4037;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 5px 0 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-btn.alt {
+    background-color: #8B4513;
+}
+
+.footer {
+    background-color: #5D4037;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    letter-spacing: 1px;
+    animation: footerFade 1.5s;
+}
+
+@keyframes footerFade {
+    from { opacity: 0; transform: translateY(40px);}
+    to   { opacity: 1; transform: translateY(0);}
+}
+
+@media screen and (max-width: 768px) {
+    td {
+        display: block;
+        width: 100%;
+    }
+    .produk-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .produk-box {
+        width: 90% !important;
+        margin-bottom: 20px;
+    }
+}
+
+main {
+    background-color: #FFFFFF;
+    padding: 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea,
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"], button[type="submit"], button[type="button"], .beli-btn {
+    background-color: #5D4037;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover,
+button[type="button"]:hover,
+.beli-btn:hover {
+    background-color: #8D6E63;
+}
+
+button, .action-btn, .beli-btn {
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover, .action-btn:hover, .beli-btn:hover {
+    transform: scale(1.08);
+}
+
+.tab {
+    display: none;
+}
+
+.kategori-label {
+    display: inline-block;
+    background-color: #5D4037;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(93,64,55,0.07);
+}
+
+.kategori-label:hover {
+    background-color: #8D6E63;
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(93,64,55,0.15);
+}
+
+.produk-container {
+    display: none;
+    margin-top: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input[type="radio"]:checked + label.kategori-label + .produk-container {
+    display: flex;
+}
+
+.produk-box {
+    background-color: #fffbe9;
+    padding: 16px;
+    border: 2.5px solid #8D6E63;
+    border-radius: 18px;
+    text-align: center;
+    width: 180px;
+    margin-bottom: 18px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 12px 36px rgba(93,64,55,0.13), 0 2px 8px rgba(93,64,55,0.07);
+}
+
+.produk-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 48px rgba(93,64,55,0.22), 0 4px 16px rgba(93,64,55,0.13);
+}
+
+.produk-box img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.beli-btn {
+    margin-top: 5px;
+    background-color: #5D4037;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px; /* lebih tumpul */
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 2px 8px rgba(93,64,55,0.07);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.beli-btn:hover {
+    background-color: #8D6E63;
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(93,64,55,0.15);
+}
+
+#invoice-box {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px 30px 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 1.1em;
+}
+
+#invoice-box h2 {
+    margin-top: 0;
+    color: #5D4037;
+    text-align: center;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.newsletter-btn {
+    background-color: #5D4037;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.newsletter-btn:hover {
+    background-color: #8D6E63;
+    transform: scale(1.08);
+}
+
+.newsletter-info {
+    margin-top: 10px;
+    padding: 8px 0 0 0;
+}
+
+.kategori, .promo {
+    transition: box-shadow 0.4s, transform 0.4s;
+}
+.kategori:hover, .promo:hover {
+    box-shadow: 0 8px 24px rgba(93,64,55,0.13);
+    transform: translateY(-5px) scale(1.03);
+}
+
+.main-frame {
+    background: #fffbe9;
+    border: 2.5px solid #8D6E63;
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(93,64,55,0.18), 0 2px 8px rgba(93,64,55,0.07);
+    padding: 28px 22px 18px 22px;
+    margin: 0 auto 22px auto; /* beri jarak bawah agar tidak menempel dengan main-extra */
+    animation: fadeIn 1s;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.main-frame:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 48px rgba(93,64,55,0.22), 0 4px 16px rgba(93,64,55,0.13);
+}
+
+.main-extra {
+    margin-top: 0;
+    background: #fffbe9;
+    border-radius: 16px;
+    border: 2.5px solid #8D6E63; /* samakan warna dan ketebalan border */
+    padding: 16px 18px;
+    box-shadow: 0 12px 36px rgba(93,64,55,0.18), 0 2px 8px rgba(93,64,55,0.07); /* samakan shadow */
+    font-size: 1em;
+    animation: fadeIn 1s;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.main-extra:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 48px rgba(93,64,55,0.22), 0 4px 16px rgba(93,64,55,0.13);
+}
+
+.kontak-info {
+    margin-top: 10px;
+    padding: 8px 0 0 0;
+}
+
+.form-frame {
+    background-color: #fffbe9;
+    border: 2.5px solid #8D6E63;
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(93,64,55,0.18), 0 2px 8px rgba(93,64,55,0.07);
+    padding: 28px 22px 18px 22px;
+    margin: 30px auto;
+    max-width: 600px;
+    animation: fadeIn 1s;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.form-frame:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 48px rgba(93,64,55,0.22), 0 4px 16px rgba(93,64,55,0.13);
+}
+
+.form-frame label {
+    display: block;
+    font-weight: 600;
+    color: #8D6E63;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.form-frame input:focus,
+.form-frame select:focus,
+.form-frame textarea:focus {
+    border-color: #8D6E63;
+    box-shadow: 0 0 8px rgba(93,64,55,0.15);
+    outline: none;
+}
+
+.form-frame input,
+.form-frame select,
+.form-frame textarea {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.kontak-frame {
+    max-width: 450px;
+    margin: 30px auto;
+    background: #fffbe9;
+    border: 3px solid #8D6E63;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(93,64,55,0.13);
+    padding: 30px 25px 20px 25px;
+    text-align: center;
+    animation: fadeIn 1s;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.kontak-frame:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 48px rgba(93,64,55,0.22), 0 4px 16px rgba(93,64,55,0.13);
+}
+
+.invoice-frame {
+    background: #fffbe9;
+    border: 2.5px solid #8D6E63;
+    border-radius: 18px;
+    box-shadow: 0 12px 36px rgba(93,64,55,0.18), 0 2px 8px rgba(93,64,55,0.07);
+    padding: 32px 28px 22px 28px;
+    margin: 0 auto;
+    max-width: 420px;
+    animation: fadeIn 1s;
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: left;
+}
+
+.invoice-frame:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 48px rgba(93,64,55,0.22), 0 4px 16px rgba(93,64,55,0.13);
+}
+
+.invoice-frame h2 {
+    text-align: center;
+    color: #5D4037;
+    margin-bottom: 18px;
+}
+
+.invoice-detail p {
+    margin: 8px 0;
+    font-size: 1.08em;
+    color: #5D4037;
+}
+
+.invoice-detail span {
+    display: inline-block;
+    min-width: 140px;
+    font-weight: 600;
+    color: #8D6E63;
+}
+
+.invoice-info {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.invoice-frame .action-btn {
+    display: block;
+    margin: 24px auto 0 auto;
+    font-size: 1em;
+    padding: 10px 24px;
+    border-radius: 8px;
+    background-color: #5D4037;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(93,64,55,0.07);
+}
+
+.invoice-frame .action-btn:hover {
+    background-color: #8D6E63;
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(93,64,55,0.15);
+}
+
+.header-anim {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+    animation: headerPop 1.2s cubic-bezier(.42,0,.58,1) forwards;
+}
+
+.header-anim:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+@keyframes headerPop {
+    from { opacity: 0; transform: scale(0.92) translateY(20px);}
+    to   { opacity: 1; transform: scale(1) translateY(0);}
+}
